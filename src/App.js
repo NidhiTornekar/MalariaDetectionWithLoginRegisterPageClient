@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+import Login from './pages/Login';
+import Register from './pages/Register';
+import Dashboard from './pages/Dashboard';
+import Otp from './pages/Otp';
+import Otpmobile from './pages/Otpmobile';
+import Error from './pages/Error';
+import Headers from './components/Headers';
+import Loginotp from './pages/Loginotp';
+import Past from './pages/Past';
+import {Routes,Route} from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+import Predict from "./pages/Predict";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Headers/>
+    <Routes>
+      <Route path='/' element={<Login/>}/>
+      <Route path='/register' element={<Register/>}/>
+      <Route path='/dashboard' element={<Dashboard/>}/>
+      <Route path='/user/otp' element={<Otp/>}/>
+      <Route path='/user/otpmobile' element={<Otpmobile/>}/>
+      <Route path='/user/loginotp' element={<Loginotp/>}/>
+      <Route path='/user/past' element={<Past/>}/>
+        <Route path="/predict" element={<Predict />} />
+      <Route path='*' element={<Error/>}/>
+      
+    </Routes>
+    </>
   );
 }
 
